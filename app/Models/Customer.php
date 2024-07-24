@@ -19,6 +19,9 @@ class Customer extends Model
         'country',
     ];
 
-    
+    // // >>>>>>>>>>>>>>>>>>>
+    // public function customer(){
+    //     return $this->hasOne(Reservasi::class,'customer_id');
+    // }
     
 }

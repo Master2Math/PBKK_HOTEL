@@ -18,5 +18,7 @@ class Kamar extends Model
         'ukuran_kamar',
         'harga',
     ];
-
+    public function dataHotel(){
+        return $this->hasOne(Hotel::class,'id_hotel');
+    }
 }

@@ -9,7 +9,14 @@ Route::get('/', function () {
 });
 
 Route::resource('/pengguna',\App\Http\Controllers\UserController::class);
+// sudah
 Route::resource('/kelas',\App\Http\Controllers\KelasController::class);
+// sudah
 Route::resource('/customer',\App\Http\Controllers\CustomerController::class);
 Route::resource('/kamar',\App\Http\Controllers\KamarController::class);
+Route::resource('/hotel',\App\Http\Controllers\HotelController::class);
+Route::resource('/reservasi',\App\Http\Controllers\ReservasiController::class);
+// belum
 
+Route::resource('/invoice',\App\Http\Controllers\InvoiceController::class);
+Route::resource('/pembayaran',\App\Http\Controllers\KamarController::class);

@@ -18,5 +18,16 @@ class Reservasi extends Model
         'tanggal_akhir',
         'id_hotel',
     ];
+    protected $primaryKey = 'id';
+
+    // <<<<<<<<<<<<<<<<
+    public function hotel(){
+        return $this->belongsTo(Hotel::class, 'id_hotel');
+    }
+    
+    public function customer(){
+        return $this->belongsTo(Customer::class, 'customer_id');
+    }
+    
 
 }
