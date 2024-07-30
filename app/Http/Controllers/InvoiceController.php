@@ -24,12 +24,12 @@ class InvoiceController extends Controller
 
     public function store(Request $request): RedirectResponse
     {
+        // dd($request);
        
         //validate form
         $request->validate([
             'deskripsi'         => 'required|min:1|:invoice,deskripsi',
             'status'            => 'required|min:1|:invoice,status',
-            'tanggal'           => 'required|min:1|:invoice,tanggal',
             'besar_dp'          => 'required|min:1|:invoice,besar_dp',
             'id_reservasi'      => 'required|min:1|:invoice,id_reservasi',
          
@@ -38,7 +38,6 @@ class InvoiceController extends Controller
         invoice::create([
             'deskripsi'        => $request->deskripsi,
             'status'           => $request->status,
-            'tanggal'          => $request->tanggal,
             'besar_dp'         => $request->besar_dp,
             'id_reservasi'     => $request->id_reservasi,
             
@@ -52,7 +51,7 @@ class InvoiceController extends Controller
     {
         $datainvoice = invoice::findOrFail($id);
         $reservasi = Reservasi::all();
-        return view('invoice.edit', compact('datainvoice','reservassi'));
+        return view('invoice.edit', compact('datainvoice','reservasi'));
     }
 
     public function show(string $id): View
@@ -64,12 +63,11 @@ class InvoiceController extends Controller
 
     public function update(Request $request, $id): RedirectResponse
     {
-        // dd($request->available_room);
+        // dd($request);
         //validate form
         $request->validate([
             'deskripsi'         => 'required|min:1|:invoice,deskripsi',
             'status'            => 'required|min:1|:invoice,status',
-            'tanggal'           => 'required|min:1|:invoice,tanggal',
             'besar_dp'          => 'required|min:1|:invoice,besar_dp',
             'id_reservasi'      => 'required|min:1|:invoice,id_reservasi',
          
@@ -79,7 +77,6 @@ class InvoiceController extends Controller
         $datainvoice->update([
             'deskripsi'        => $request->deskripsi,
             'status'           => $request->status,
-            'tanggal'          => $request->tanggal,
             'besar_dp'         => $request->besar_dp,
             'id_reservasi'     => $request->id_reservasi,
             ]);

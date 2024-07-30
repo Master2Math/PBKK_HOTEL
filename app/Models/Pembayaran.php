@@ -11,11 +11,22 @@ class Pembayaran extends Model
     protected $table = 'pembayaran';
 
     protected $fillable = [
-        'id_payment',
+        'id_pembayaran',
         'customer_id',
         'tanggal',
         'metode_bayar',
-        'id_hotel',
+        'id_invoice',
     ];
+
+    protected $primaryKey = 'id';
+
+    // <<<<<<<<<<<<<<<<
+    public function customer(){
+        return $this->belongsTo(Customer::class, 'customer_id');
+    }
+    
+    public function invoice(){
+        return $this->belongsTo(Invoice::class, 'id_invoice');
+    }
 
 }

@@ -16,7 +16,8 @@ Route::resource('/customer',\App\Http\Controllers\CustomerController::class);
 Route::resource('/kamar',\App\Http\Controllers\KamarController::class);
 Route::resource('/hotel',\App\Http\Controllers\HotelController::class);
 Route::resource('/reservasi',\App\Http\Controllers\ReservasiController::class);
+Route::resource('/invoice',\App\Http\Controllers\InvoiceController::class);
+Route::resource('/pembayaran',\App\Http\Controllers\PembayaranController::class);
+
 // belum
 
-Route::resource('/invoice',\App\Http\Controllers\InvoiceController::class);
-Route::resource('/pembayaran',\App\Http\Controllers\KamarController::class);

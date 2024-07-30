@@ -25,7 +25,9 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">DESKRIPSI</label>
                                 <input type="text" name="deskripsi" class="form-control" placeholder="Masukkan Deskripsi">
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.
+                                    
+                                </small>
                                 @error('deskripsi')
                                 <div class="alert alert-danger mt-2">
                                     {{ $message }}
@@ -33,7 +35,7 @@
                                 @enderror
                               </div>
                               <!-- Status Bayar -->
-                              <<div class="form-group">
+                              <div class="form-group">
                                 <label for="exampleStatusBayar">Status Bayar</label>
                                 <select name="status" class="form-control" id="exampleStatusBayar">
                                     <option value="bayar">Bayar</option>
@@ -60,14 +62,13 @@
                                 @enderror
                               </div>
                            
-                               <!-- ID Hotel -->
-                                <!-- ID Hotel-->
-                                 <!-- Nama Customer-->
+                               <!-- ID Reservasi -->
+                                <!-- ID Reservasi-->
                             <div class="form-group">
-                                <label for="available_room">Nama Customer</label>
+                                <label for="available_room">Tanggal Booking</label>
                                 <select class="form-control" name="id_reservasi" id="exampleFormControlSelect1">
                              @foreach ($reservasi as $data_reservasi)
-                             <option value="{{ $data_reservasi->id }}">{{ $data_reservasi->id }}</option>
+                             <option value="{{ $data_reservasi->id }}">{{ $data_reservasi->tanggal }}</option>
                              @endforeach
                                 </select>
                                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
